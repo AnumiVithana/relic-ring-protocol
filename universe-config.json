@@ -1,0 +1,61 @@
+{
+  "universe_metadata": {
+    "speed_of_light_km_s": 300000,
+    "tower_delay_ms": 7,
+    "lmax_km": 50000000,
+    "fiber_speed_fraction": 0.67,
+    "coordinate_scale_unit_km": 100000
+  },
+  "planets": [
+    {
+      "id": "Aethon",
+      "codex": 8,
+      "x": 0,
+      "y": 0,
+      "radius_km": 6000,
+      "active_towers": 6,
+      "atmosphere_thickness_km": 200,
+      "refraction_index": 1.2
+    },
+    {
+      "id": "Boros",
+      "codex": 5,
+      "x": 3,
+      "y": 1,
+      "radius_km": 4500,
+      "active_towers": 4,
+      "atmosphere_thickness_km": 150,
+      "refraction_index": 1.1
+    },
+    {
+      "id": "Cyra",
+      "codex": 14,
+      "x": 6,
+      "y": 3,
+      "radius_km": 7000,
+      "active_towers": 8,
+      "atmosphere_thickness_km": 300,
+      "refraction_index": 1.35
+    },
+    {
+      "id": "Dravik",
+      "codex": 7,
+      "x": 1,
+      "y": 5,
+      "radius_km": 5200,
+      "active_towers": 5,
+      "atmosphere_thickness_km": 180,
+      "refraction_index": 1.15
+    },
+    {
+      "id": "Elos",
+      "codex": 12,
+      "x": 9,
+      "y": 0,
+      "radius_km": 3800,
+      "active_towers": 4,
+      "atmosphere_thickness_km": 100,
+      "refraction_index": 1.05
+    }
+  ]
+}

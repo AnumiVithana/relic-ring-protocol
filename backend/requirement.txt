@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pytest
+networkx
+
+
+constants.py   → physical constants from config
+models.py      → Planet, Tower, codec translation
+universe.py    → loader, failure simulation
+latency.py     → 4-component latency formula
+router.py      → Dijkstra + hop_log + encoding
