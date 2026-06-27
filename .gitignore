@@ -1,0 +1,34 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Python Cache & Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editor/IDE Configurations
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# OS Files
+Thumbs.db
+db.lock
+.DS_Store
+
+# Frontend Node modules & Builds
+node_modules/
+dist/
+.eslintcache
+.oxlintrc.json
+.oxlint_cache

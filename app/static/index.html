@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relic Ring Protocol — Zeta-26 Control Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◈</span>
+    <div class="brand-text">
+      <span class="brand-title">RELIC RING PROTOCOL</span>
+      <span class="brand-sub">ZETA-26 RECOVERY NETWORK — POST-FLARE REVIVAL</span>
+    </div>
+  </div>
+  <div class="status-cluster">
+    <div class="status-pill" id="connStatus"><span class="dot"></span><span>LINK…</span></div>
+    <div class="status-pill ghost" id="clock">--:--:--</div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <!-- Universe Map -->
+  <section class="panel map-panel">
+    <div class="panel-head">
+      <h2>01 / Orbital Grid</h2>
+      <span class="panel-hint">click a planet to target it · drag empty space to pan · scroll to zoom</span>
+    </div>
+    <div class="map-wrap">
+      <canvas id="mapCanvas"></canvas>
+      <div class="map-legend">
+        <div><span class="swatch swatch-link"></span>void link</div>
+        <div><span class="swatch swatch-blocked"></span>exceeds Lmax</div>
+        <div><span class="swatch swatch-route"></span>active route</div>
+        <div><span class="swatch swatch-dead"></span>offline</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Control stack -->
+  <aside class="sidebar">
+
+    <!-- Transmission console -->
+    <section class="panel console-panel">
+      <div class="panel-head">
+        <h2>02 / Transmit Packet</h2>
+      </div>
+      <div class="field-row">
+        <label for="originSelect">Origin</label>
+        <select id="originSelect"></select>
+      </div>
+      <div class="field-row">
+        <label for="destSelect">Destination</label>
+        <select id="destSelect"></select>
+      </div>
+      <div class="field-row">
+        <label for="messageInput">Payload</label>
+        <input id="messageInput" type="text" maxlength="120" value="Hello world" autocomplete="off">
+      </div>
+      <button id="sendBtn" class="btn-primary">
+        <span class="btn-label">TRANSMIT</span>
+        <span class="btn-arrow">→</span>
+      </button>
+      <div id="sendResult" class="send-result"></div>
+    </section>
+
+    <!-- Chaos console -->
+    <section class="panel chaos-panel">
+      <div class="panel-head">
+        <h2>03 / Chaos Test</h2>
+        <span class="panel-hint">simulate hardware failure</span>
+      </div>
+      <div class="field-row">
+        <label for="chaosNodeSelect">Target node</label>
+        <select id="chaosNodeSelect"></select>
+      </div>
+      <div class="chaos-buttons">
+        <button id="killBtn" class="btn-danger">KILL NODE</button>
+        <button id="reviveBtn" class="btn-ghost">REVIVE</button>
+      </div>
+      <div id="chaosLog" class="chaos-log"></div>
+    </section>
+
+  </aside>
+
+  <!-- Hop log + latency breakdown -->
+  <section class="panel log-panel">
+    <div class="panel-head">
+      <h2>04 / Hop Log &amp; Latency Breakdown</h2>
+      <span class="panel-hint" id="logSubtitle">awaiting transmission…</span>
+    </div>
+    <div class="log-body">
+      <div class="hop-log-wrap">
+        <table class="hop-table">
+          <thead>
+            <tr>
+              <th>#</th><th>Node</th><th>Tower</th><th>Event</th><th>Codex</th><th>Payload</th><th>T_p</th><th>T_v</th>
+            </tr>
+          </thead>
+          <tbody id="hopTableBody">
+            <tr class="empty-row"><td colspan="8">No packet sent yet. Configure a transmission above.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="breakdown-wrap">
+        <div class="breakdown-bar" id="breakdownBar">
+          <div class="seg seg-fiber" style="width:0%"></div>
+          <div class="seg seg-tower" style="width:0%"></div>
+          <div class="seg seg-void" style="width:0%"></div>
+        </div>
+        <ul class="breakdown-list" id="breakdownList">
+          <li><span class="dot dot-fiber"></span>Fiber arc <strong>0.000 ms</strong></li>
+          <li><span class="dot dot-tower"></span>Tower processing <strong>0.000 ms</strong></li>
+          <li><span class="dot dot-void"></span>Atmosphere + void <strong>0.000 ms</strong></li>
+        </ul>
+        <div class="total-latency">
+          <span>TOTAL LATENCY</span>
+          <strong id="totalLatencyValue">0.000 ms</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>IEEE Computer Society · University of Kelaniya · Launch26</span>
+  <span class="footer-dim">Aether-Net offline since the Hyper-Flare of 3704 — relaying on legacy infrastructure</span>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
