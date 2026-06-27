@@ -1,0 +1,25 @@
+# Ignore Python virtual environment and caches
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ignore Git files
+.git/
+.gitignore
+
+# Ignore IDE configurations
+.idea/
+.vscode/
+
+# Ignore frontend boilerplate (not served directly)
+frontend/
+node_modules/
+
+# Ignore local temp files
+*.log

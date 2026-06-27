@@ -1,0 +1,9 @@
+services:
+  relic-ring-terminal:
+    build: .
+    container_name: relic-ring-terminal-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./universe-config.json:/workspace/universe-config.json
+    restart: always
