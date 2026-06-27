@@ -4,6 +4,8 @@
 
 After the Hyper-Flare of 3704 destroyed the instant, zero-latency Aether-Net, the only thing left connecting Zeta-26's six worlds is the **Relic Ring**, a patchwork of underground fiber rings, laser transceivers, and incompatible numeral systems built by the system's earliest colonists. This project simulates that network. It routes packets between planets, calculates real physical latency (fiber transit, tower processing delay, atmospheric refraction, vacuum laser transit), translates payloads between each planet's numeric dialect, and survives node/link failures by rerouting live.
 
+Live link :- https://thamarabhagya-relic-ring-protocol.hf.space/
+
 ---
 
 ## Table of Contents
