@@ -1,8 +1,8 @@
 # Relic Ring Protocol
 
-> A latency-accurate, fault-tolerant routing simulator for the Zeta-26 star system — built for **Launch26**, IEEE Computer Society, University of Kelaniya.
+> A latency-accurate, fault-tolerant routing simulator for the Zeta-26 star system.
 
-After the Hyper-Flare of 3704 destroyed the instant, zero-latency Aether-Net, the only thing left connecting Zeta-26's six worlds is the **Relic Ring** — a patchwork of underground fiber rings, laser transceivers, and incompatible numeral systems built by the system's earliest colonists. This project simulates that network: it routes packets between planets, calculates real physical latency (fiber transit, tower processing delay, atmospheric refraction, vacuum laser transit), translates payloads between each planet's numeric dialect, and survives node/link failures by rerouting live.
+After the Hyper-Flare of 3704 destroyed the instant, zero-latency Aether-Net, the only thing left connecting Zeta-26's six worlds is the **Relic Ring**, a patchwork of underground fiber rings, laser transceivers, and incompatible numeral systems built by the system's earliest colonists. This project simulates that network. It routes packets between planets, calculates real physical latency (fiber transit, tower processing delay, atmospheric refraction, vacuum laser transit), translates payloads between each planet's numeric dialect, and survives node/link failures by rerouting live.
 
 ---
 
@@ -25,7 +25,7 @@ After the Hyper-Flare of 3704 destroyed the instant, zero-latency Aether-Net, th
 
 ## What this actually does
 
-Given a `universe-config.json` describing a star system (planets, their towers, their numeric "codex" base, and physical constants), this system:
+Given a `universe-config.json` describing a star system (planets, their towers, their numeric "codex" base, and physical constants), this system,
 
 1. **Builds a routing graph** at the level of individual towers, not just planets, so the shortest-latency path correctly accounts for which tower a packet enters and exits on each world.
 2. **Calculates real latency** for any route using four physical components: fiber-arc transit inside a planet, per-tower processing delay, atmospheric refraction slowdown, and vacuum laser transit time.
@@ -54,7 +54,7 @@ DESTINATION PLANET
   decoded one final time, payload delivered
 ```
 
-Every hop produces an entry in the packet's `hop_log`, so the full route — which planet, which tower, what the payload looked like at that exact moment — is provable after the fact.
+Every hop produces an entry in the packet's `hop_log`, so the full route which planet, which tower, what the payload looked like at that exact moment, is provable after the fact.
 
 ---
 
@@ -93,20 +93,20 @@ relic-ring-protocol/
 
 **Requirements:** Python 3.10 or newer (the codebase uses modern type-hint syntax like `str | None`).
 
-1. Clone or unzip the project, then move into the project folder:
+1. Clone or unzip the project, then move into the project folder
 
    ```bash
    cd relic-ring-protocol
    ```
 
-2. (Recommended) create a virtual environment:
+2. Create a virtual environment
 
    ```bash
    python -m venv venv
    source venv/bin/activate        # on Windows: venv\Scripts\activate
    ```
 
-3. Install dependencies:
+3. Install dependencies
 
    ```bash
    pip install -r requirements.txt
@@ -127,7 +127,7 @@ If you prefer running the simulator in containers, this repository already inclu
 
 ### Start with Docker Compose
 
-From the project root:
+From the project root,
 
 ```bash
 docker compose up --build
@@ -135,7 +135,7 @@ docker compose up --build
 
 Then open **http://localhost:8000**.
 
-What this does:
+What this does
 
 - Builds the image from `Dockerfile`
 - Starts the `relic-ring-terminal` service
@@ -148,7 +148,7 @@ What this does:
 docker compose up --build -d
 ```
 
-Useful follow-up commands:
+Useful follow-up commands
 
 ```bash
 docker compose logs -f
@@ -158,13 +158,13 @@ docker compose down
 
 ### Rebuild after dependency/code changes
 
-If you change dependencies (for example in `requirements.txt`) or container build steps:
+If you change dependencies (for example in `requirements.txt`) or container build steps.
 
 ```bash
 docker compose up --build -d
 ```
 
-To force a fresh rebuild with no cache:
+To force a fresh rebuild with no cache.
 
 ```bash
 docker compose build --no-cache
@@ -276,7 +276,7 @@ Planet coordinates are in abstract grid units, so they're first multiplied by `c
 T_v = (h1 x n1 + h2 x n2 + L) / C
 ```
 
-The atmosphere slows the signal down (each planet's `refraction_index`, n), and the rest of the trip is vacuum at the speed of light, C. This is a per-hop cost: every time a packet crosses from one planet to another, this formula runs once.
+The atmosphere slows the signal down (each planet's `refraction_index`, n), and the rest of the trip is vacuum at the speed of light, C. This is a per-hop cost. Every time a packet crosses from one planet to another, this formula runs once.
 
 ### 3. Internal crust transit: how long it takes to cross a planet between towers
 
@@ -341,4 +341,4 @@ What's covered:
 
 ---
 
-*Built for Launch26, IEEE Computer Society, University of Kelaniya.*
+*Launch26, IEEE Computer Society, University of Kelaniya.*
